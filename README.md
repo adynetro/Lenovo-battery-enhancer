@@ -15,5 +15,5 @@ To install simply run
 To uninstall you have to run
 
 ```ps
-.\uninstall.ps1
+%appdata%\adynetro\uninstall.ps1
 ```
