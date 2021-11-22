@@ -8,3 +8,6 @@ If (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 }
 schtasks.exe /delete /tn 'Battery Enhancer' /f
 Remove-Item -Path "$env:appdata\\adynetro" -Recurse
+Write-Host "The script have been removed from your system ! Place any key to finish"
+
+[Console]::Readkey()

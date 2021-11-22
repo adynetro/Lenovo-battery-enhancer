@@ -6,6 +6,6 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 New-Item -Path "$env:appdata\\adynetro\\" -ItemType Directory -Force
 Copy-Item -Path "$PSScriptRoot\*" -Destination "$env:appdata\\adynetro\\" 
 schtasks /create /xml "$PSScriptRoot\Battery Enhancer.xml" /tn "Battery Enhancer" /ru SYSTEM
-Write-Host "The binaries have been copied in place ! Place any key to finish"
+Write-Host "The script has been copied in place and scheduled to run ! Place any key to finish"
 
 [Console]::Readkey()
