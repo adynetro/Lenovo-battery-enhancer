@@ -3,7 +3,7 @@ If (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
   #"No Administrative rights, it will display a popup window asking user for Admin rights"
 
   $arguments = "& '" + $myinvocation.mycommand.definition + "'"
-  Start-Process "$psHome\powershell.exe" -Verb runAs -ArgumentList $arguments
+  Start-Process "powershell" -Verb runAs -ArgumentList $arguments
   Break
 }
 New-Item -Path "$env:appdata\\adynetro\\" -ItemType Directory -Force
