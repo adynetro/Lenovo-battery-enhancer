@@ -4,8 +4,17 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
   break
 }
 New-Item -Path "$env:appdata\\adynetro\\" -ItemType Directory -Force
+for ($i = 1; $i -le 100; $i++ )
+
+{
+    Write-Progress -Activity "Install in progress..." -Status "$i% Complete:" -PercentComplete $i
+    Start-Sleep -Milliseconds 10
+}
+
 Copy-Item -Path "$PSScriptRoot\*" -Destination "$env:appdata\\adynetro\\" 
 schtasks /create /xml "$PSScriptRoot\Battery Enhancer.xml" /tn "Battery Enhancer" /ru $env:USERNAME
+
+Clear-Host[]
 Write-Host "The script has been copied in place and scheduled to run ! Place any key to finish"
 
 [Console]::Readkey()
